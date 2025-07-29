@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="frontend.ExampleFrontendTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-29T18:55:39" hostname="KRZYSIEKD" time="8.779">
+  <properties/>
+  <testcase name="ifNewUserSuccessfullyRegister" classname="frontend.ExampleFrontendTest" time="8.779"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+]]></system-err>
+</testsuite>

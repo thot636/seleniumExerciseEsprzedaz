@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-29T20:55:38 CEST" name="Gradle suite" finished-at="2025-07-29T20:55:48 CEST" duration-ms="10156">
+    <groups>
+    </groups>
+    <test started-at="2025-07-29T20:55:38 CEST" name="Gradle test" finished-at="2025-07-29T20:55:48 CEST" duration-ms="10156">
+      <class name="frontend.ExampleFrontendTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:frontend.ExampleFrontendTest@68f4865]" started-at="2025-07-29T20:55:38 CEST" name="setUp" finished-at="2025-07-29T20:55:39 CEST" duration-ms="1208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="ifNewUserSuccessfullyRegister()[pri:0, instance:frontend.ExampleFrontendTest@68f4865]" started-at="2025-07-29T20:55:39 CEST" name="ifNewUserSuccessfullyRegister" finished-at="2025-07-29T20:55:48 CEST" duration-ms="8779" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ifNewUserSuccessfullyRegister -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:frontend.ExampleFrontendTest@68f4865]" started-at="2025-07-29T20:55:48 CEST" name="tearDown" finished-at="2025-07-29T20:55:48 CEST" duration-ms="147" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- frontend.ExampleFrontendTest -->
+    </test> <!-- Gradle test -->
+  </suite> <!-- Gradle suite -->
+</testng-results>
