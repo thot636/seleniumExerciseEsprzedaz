@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="frontend.ExampleFrontendTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-29T18:55:39" hostname="KRZYSIEKD" time="8.779">
+<testsuite name="frontend.ExampleFrontendTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-08-08T12:23:45" hostname="KRZYSIEKD" time="5.096">
   <properties/>
-  <testcase name="ifNewUserSuccessfullyRegister" classname="frontend.ExampleFrontendTest" time="8.779"/>
+  <testcase name="ifNewUserSuccessfullyRegister" classname="frontend.ExampleFrontendTest" time="5.096"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
 SLF4J(W): Defaulting to no-operation (NOP) logger implementation
 SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Aug 08, 2025 2:23:45 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 139, returning the closest version; found: 138; Please update to a Selenium version that supports CDP version 139
 ]]></system-err>
 </testsuite>

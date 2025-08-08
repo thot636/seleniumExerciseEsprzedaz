@@ -12,40 +12,44 @@ import java.time.Duration;
 import java.util.Properties;
 
 public class WebDriverManage {
-    protected static WebDriver driver;
+    protected WebDriver driver;
 
-    private static Properties properties;
-    private static final String propertyFilePath = "config/configuration.properties";
+    private Properties properties;
+    private final String propertyFilePath = "config/configuration.properties";
+    private static final WebDriverManage INSTANCE = new WebDriverManage();
 
-    private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
+    private final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 
-    public static void initiateWebDriver(){
+    public static WebDriverManage getInstance() {
+        return INSTANCE;
+    }
+
+    public WebDriverManage(){
         readFile();
-        setUpDriver();
     }
 
-    public static WebDriver getWebDriver(){
-        return driver;
+    public void quitDriver() {
+            if (driver != null) {
+                driver.quit();
+            }
+
     }
 
-    public static WebDriver setUpDriver() {
-        if (driver == null) driver = createDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        return driver;
+    public WebDriver getDriver() {
+            if (driver == null) {
+                WebDriverManager.chromedriver().setup();
+                driver = new ChromeDriver();
+                driver.manage().window().maximize();
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            }
+            return driver;
     }
 
-    private static WebDriver createDriver() {
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        return driver;
-    }
-
-    public static Properties getProperties() {
+    public Properties getProperties() {
         return properties;
     }
 
-    private static  void readFile() {
+    private  void readFile() {
         BufferedReader reader;
         try {
             reader = new BufferedReader(new FileReader(propertyFilePath));

@@ -1,30 +1,30 @@
 package org.example.ftontend.pageObjects;
 
-import org.example.ftontend.TestUtil;
+import org.example.ftontend.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.UUID;
 
 
-public class RegistrationPageObj extends TestUtil {
+public class RegistrationPageObj extends BasePage {
+//    @FindBy(css =  "input[name='email']")
+//    private WebElement emailInputField;
 
-    public RegistrationPageObj(){
-        super();
-    }
     public String getTitle(){
-        return getWebDriver().getTitle().toString();
+        return driver.getTitle().toString();
     }
 
     public RegistrationPageObj openRegistrationPage(){
-        getWebDriver().get(getUrlLink());
+        driver.get(getUrlLink());
         return this;
     }
 
     public RegistrationPageObj typeInUniqueEmail(){
         String uniqueEmail = generateUniqueEmail();
         WebElement emailInputField =
-                getWebDriver().findElement(By.cssSelector("input[name='email']"));
+                driver.findElement(By.cssSelector("input[name='email']"));
         waitForElementAndClickOnIt(emailInputField);
         emailInputField.sendKeys(uniqueEmail);
         return this;
@@ -32,7 +32,7 @@ public class RegistrationPageObj extends TestUtil {
 
     public RegistrationPageObj typeInPassword(String password){
         WebElement passwordInputField =
-                getWebDriver().findElement(By.cssSelector("input[name='password']"));
+                driver.findElement(By.cssSelector("input[name='password']"));
         waitForElementAndClickOnIt(passwordInputField);
         passwordInputField.sendKeys(password);
         return this;
@@ -40,7 +40,7 @@ public class RegistrationPageObj extends TestUtil {
 
     public RegistrationPageObj typeInConfirmPassword(String password){
         WebElement passwordConfirmField =
-                getWebDriver().findElement(By.cssSelector("input[name='password_confirm']"));
+                driver.findElement(By.cssSelector("input[name='password_confirm']"));
         waitForElementAndClickOnIt(passwordConfirmField);
         passwordConfirmField.sendKeys(password);
         return this;
@@ -48,16 +48,16 @@ public class RegistrationPageObj extends TestUtil {
 
     public RegistrationPageObj selectAcceptTerms(){
         WebElement checkBox =
-                getWebDriver().findElement(By.cssSelector(".c-checkbox-field__checkmark"));
+                driver.findElement(By.cssSelector(".c-checkbox-field__checkmark"));
         waitForElementAndClickOnIt(checkBox);
         return this;
     }
 
     public LoggedInPageObj clickOnRegisterButton(){
         WebElement regButton =
-                getWebDriver().findElement(By.cssSelector("button[type='submit']"));
+                driver.findElement(By.cssSelector("button[type='submit']"));
         waitForElementAndClickOnIt(regButton);
-        return new LoggedInPageObj();
+        return new LoggedInPageObj(driver);
     }
 
     private String generateUniqueEmail(){

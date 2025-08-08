@@ -1,22 +1,14 @@
 package frontend;
 
-import org.example.ftontend.managers.WebDriverManage;
 import org.example.ftontend.pageObjects.LoggedInPageObj;
 import org.example.ftontend.pageObjects.RegistrationPageObj;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.example.ftontend.managers.WebDriverManage.getWebDriver;
 
-public class ExampleFrontendTest {
+public class ExampleFrontendTest extends BaseTest {
 
-    @BeforeClass
-    public void setUp() {
-        WebDriverManage.initiateWebDriver();
 
-    }
 
     @Test
     public void ifNewUserSuccessfullyRegister() {
@@ -39,10 +31,5 @@ public class ExampleFrontendTest {
                 .clickOnPopUp()
                 .clickOnAccountIcon()
                 .clickOnLogOut();
-    }
-
-    @AfterTest
-    public void tearDown() {
-        getWebDriver().quit();
     }
 }
